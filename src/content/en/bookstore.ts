@@ -1,0 +1,18 @@
+export const bookstore = {
+  meta_title: 'Book Store - Iglesia Monte Horeb',
+  meta_description: 'Browse our collection of books, journals and faith resources.',
+  headline: 'Book Store',
+  subheadline: 'Discover books and resources to deepen your faith.',
+  all_products: 'Our Collection',
+  view_cart: 'View Cart',
+  no_products: 'No books available yet.',
+  add_to_cart: 'Add to Cart',
+  cart_empty: 'Your cart is empty',
+  continue_shopping: 'Continue Shopping',
+  checkout: 'Checkout',
+  order_summary: 'Order Summary',
+  subtotal: 'Subtotal',
+  tax: 'Tax',
+  shipping: 'Shipping',
+  total: 'Total',
+}

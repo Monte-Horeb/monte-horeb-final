@@ -1,0 +1,18 @@
+export const bookstore = {
+  meta_title: 'Tienda de Libros - Iglesia Monte Horeb',
+  meta_description: 'Explora nuestra colección de libros, diarios y recursos de fe.',
+  headline: 'Tienda de Libros',
+  subheadline: 'Descubre libros y recursos para profundizar tu fe.',
+  all_products: 'Nuestra Colección',
+  view_cart: 'Ver Carrito',
+  no_products: 'No hay libros disponibles aún.',
+  add_to_cart: 'Agregar al Carrito',
+  cart_empty: 'Tu carrito está vacío',
+  continue_shopping: 'Seguir Comprando',
+  checkout: 'Proceder al Pago',
+  order_summary: 'Resumen del Pedido',
+  subtotal: 'Subtotal',
+  tax: 'Impuesto',
+  shipping: 'Envío',
+  total: 'Total',
+}
