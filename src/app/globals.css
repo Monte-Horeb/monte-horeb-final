@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Logo-derived color tokens */
+    --color-primary: 30 58 138;       /* #1E3A8A royal blue */
+    --color-accent:  217 119   6;     /* #D97706 amber gold */
+    --color-flame:   234  88  12;     /* #EA580C warm red-orange */
+  }
+
+  /* Base font: 18px minimum for accessibility */
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Focus ring - WCAG AA keyboard navigation */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2;
+  }
+
+  /* Headings */
+  h1 { @apply text-4xl font-bold leading-tight tracking-tight; }
+  h2 { @apply text-3xl font-bold leading-snug; }
+  h3 { @apply text-2xl font-semibold leading-snug; }
+  h4 { @apply text-xl font-semibold; }
+  h5 { @apply text-lg font-semibold; }
+  h6 { @apply text-base font-semibold; }
+
+  /* Paragraphs */
+  p { @apply leading-relaxed; }
+
+  /* Links */
+  a {
+    @apply text-primary-700 underline-offset-2;
+  }
+  a:hover {
+    @apply text-primary-900 underline;
+  }
+
+  /* Image defaults */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+@layer components {
+  /* ─── Buttons ─────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           min-h-[48px] px-6 py-3 rounded-lg font-semibold
+           transition-colors duration-150 cursor-pointer
+           select-none no-underline;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-900 text-white
+           hover:bg-primary-800 active:bg-primary-950;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-600 text-white
+           hover:bg-accent-700 active:bg-accent-800;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-900 text-primary-900 bg-transparent
+           hover:bg-primary-900 hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply btn text-primary-900 bg-transparent
+           hover:bg-primary-50;
+  }
+
+  .btn-sm {
+    @apply min-h-[40px] px-4 py-2 text-sm;
+  }
+
+  .btn-lg {
+    @apply min-h-[56px] px-8 py-4 text-xl;
+  }
+
+  /* ─── Cards ───────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-neutral-100
+           overflow-hidden;
+  }
+
+  .card-body {
+    @apply p-6;
+  }
+
+  /* ─── Section layouts ─────────────────────────────────── */
+  .section {
+    @apply py-16 px-4 md:px-8;
+  }
+
+  .section-sm {
+    @apply py-10 px-4 md:px-8;
+  }
+
+  .container-site {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto;
+  }
+
+  /* ─── Service time block (critical above fold) ─────────── */
+  .service-time-block {
+    @apply bg-white border-l-4 border-primary-900 rounded-lg p-5
+           shadow-sm;
+  }
+
+  .service-time-day {
+    @apply text-primary-900 font-bold text-xl;
+  }
+
+  .service-time-hours {
+    @apply text-neutral-900 font-semibold text-lg;
+  }
+
+  .service-time-note {
+    @apply text-neutral-600 text-sm mt-1;
+  }
+
+  /* ─── Sermon cards ────────────────────────────────────── */
+  .sermon-card {
+    @apply card hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* ─── Badge ───────────────────────────────────────────── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full
+           text-xs font-medium;
+  }
+
+  .badge-blue {
+    @apply badge bg-primary-100 text-primary-800;
+  }
+
+  .badge-gold {
+    @apply badge bg-accent-100 text-accent-800;
+  }
+
+  .badge-green {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  /* ─── Form inputs ─────────────────────────────────────── */
+  .input {
+    @apply w-full min-h-[48px] px-4 py-3 rounded-lg border border-neutral-300
+           bg-white text-neutral-900 placeholder-neutral-400
+           focus:outline-none focus:ring-2 focus:ring-primary-600
+           focus:border-transparent transition;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-neutral-700 mb-1.5;
+  }
+
+  /* ─── Progress bar ────────────────────────────────────── */
+  .progress-bar {
+    @apply h-2 bg-neutral-200 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full bg-accent-600 rounded-full transition-all duration-500;
+  }
+
+  /* ─── Image placeholder ───────────────────────────────── */
+  .img-placeholder {
+    @apply bg-neutral-200 flex items-center justify-center
+           text-neutral-400 text-sm font-medium;
+  }
+
+  /* ─── Admin specific ──────────────────────────────────── */
+  .admin-card {
+    @apply card p-6;
+  }
+
+  .admin-table {
+    @apply w-full text-sm;
+  }
+
+  .admin-table th {
+    @apply text-left font-semibold text-neutral-600 pb-3 border-b border-neutral-200;
+  }
+
+  .admin-table td {
+    @apply py-3 border-b border-neutral-100;
+  }
+}
+
+@layer utilities {
+  /* Skip to main content - accessibility */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4
+           focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:rounded
+           focus:shadow-lg focus:text-primary-900 focus:font-semibold;
+  }
+
+  /* Screen-reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Flame gradient (used in hero or section accents) */
+  .text-gradient-flame {
+    background: linear-gradient(135deg, #D97706, #EA580C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Full-bleed primary section */
+  .bg-primary-section {
+    @apply bg-primary-900 text-white;
+  }
+}
